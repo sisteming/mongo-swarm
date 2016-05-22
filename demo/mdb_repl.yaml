@@ -1,0 +1,200 @@
+version: '2'
+
+services:
+
+  ################
+  #FIRST SHARD
+  ################
+
+  rs1a:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_replset_1
+    ports:
+      - 27001:27000
+      - 27027:27027
+    volumes:
+      - /mnt/data:/data
+    hostname: rs1a
+    container_name: rs1a
+    labels:
+      - "initialstate=primary"
+
+
+  rs1b:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_replset_1
+    ports:
+      - 27002:27000
+      - 27028:27028
+    volumes:
+      - /mnt/data:/data
+    hostname: rs1b
+    container_name: rs1b
+    labels:
+      - "initialstate=secondary"
+
+
+  rs1c:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_replset_1
+    ports:
+      - 27003:27000
+      - 27029:27029
+    volumes:
+      - /mnt/data:/data
+    hostname: rs1c
+    container_name: rs1c
+    labels:
+      - "initialstate=secondary"
+
+  ################
+  #SECOND SHARD
+  ################
+
+  rs2a:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_replset_2
+    ports:
+      - 27011:27000
+      - 27037:27037
+    volumes:
+      - /mnt/data:/data
+    hostname: rs2a
+    container_name: rs2a
+    labels:
+      - "initialstate=primary"
+
+  rs2b:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_replset_2
+    ports:
+      - 27012:27000
+      - 27038:27038
+    volumes:
+      - /mnt/data:/data
+    hostname: rs2b
+    container_name: rs2b
+    labels:
+      - "initialstate=secondary"
+
+  rs2c:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_replset_2
+    ports:
+      - 27013:27000
+      - 27039:27039
+    volumes:
+      - /mnt/data:/data
+    hostname: rs2c
+    container_name: rs2c
+    labels:
+      - "initialstate=secondary"
+
+    ################
+    #THIRD SHARD
+    ################
+
+
+  rs3a:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_replset_3
+    ports:
+      - 27021:27000
+      - 27047:27047
+    volumes:
+      - /mnt/data:/data
+    hostname: rs3a
+    container_name: rs3a
+    labels:
+      - "initialstate=primary"
+
+  rs3b:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_replset_3
+    ports:
+      - 27022:27000
+      - 27048:27048
+    volumes:
+      - /mnt/data:/data
+    hostname: rs3b
+    container_name: rs3b
+    labels:
+      - "initialstate=secondary"
+
+  rs3c:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_replset_3
+    ports:
+      - 27023:27000
+      - 27049:27049
+    volumes:
+      - /mnt/data:/data
+    hostname: rs3c
+    container_name: rs3c
+    labels:
+      - "initialstate=secondary"
+
+  ################
+  #CFG SVR
+  ################
+
+  cfgsvr-a:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_cfg
+    ports:
+      - 27030:27000
+      - 27057:27057
+    volumes:
+      - /mnt/data:/data
+    hostname: cfgsvr-a
+    container_name: cfgsvr-a
+
+  cfgsvr-b:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_cfg
+    ports:
+      - 27031:27000
+      - 27058:27058
+    volumes:
+      - /mnt/data:/data
+    hostname: cfgsvr-b
+    container_name: cfgsvr-b
+
+  cfgsvr-c:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_cfg
+    ports:
+      - 27032:27000
+      - 27059:27059
+    volumes:
+      - /mnt/data:/data
+    hostname: cfgsvr-c
+    container_name: cfgsvr-c
+
+  ################
+  #mongos
+  ################
+
+  mongos:
+    extends:
+      file: mdb_base.yaml
+      service: mongodb_mongos
+    ports:
+      - 27000:27000
+      - 27017:27017
+    volumes:
+      - /mnt/data:/data
+    hostname: mongos
+    container_name: mongos

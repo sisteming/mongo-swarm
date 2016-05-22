@@ -1,0 +1,58 @@
+version: '2'
+
+services:
+
+  mongodb_replset_1:
+    image: marcob/mongodb-automation:2.7.1
+    security_opt:
+      - seccomp:unconfined
+    labels:
+      - "role=mongod"
+      - "replset=rs1"
+    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsGroupId=$YOURMMSGROUPID --mmsApiKey=$YOURMMSGROUPAPIKEY
+
+  ################
+  #SECOND SHARD
+  ################
+  mongodb_replset_2:
+    image: marcob/mongodb-automation:2.7.1
+    security_opt:
+      - seccomp:unconfined
+    labels:
+      - "role=mongod"
+      - "replset=rs2"
+    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsGroupId=$YOURMMSGROUPID --mmsApiKey=$YOURMMSGROUPAPIKEY
+
+  ################
+  #THIRD SHARD
+  ################
+  mongodb_replset_3:
+    image: marcob/mongodb-automation:2.7.1
+    security_opt:
+      - seccomp:unconfined
+    labels:
+      - "role=mongod"
+      - "replset=rs3"
+    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsGroupId=$YOURMMSGROUPID --mmsApiKey=$YOURMMSGROUPAPIKEY
+
+  ################
+  #CFG SVR
+  ################
+  mongodb_cfg:
+    image: marcob/mongodb-automation:2.7.1
+    security_opt:
+      - seccomp:unconfined
+    labels:
+      - "role=cfgsvr"
+    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsGroupId=$YOURMMSGROUPID --mmsApiKey=$YOURMMSGROUPAPIKEY
+
+  ################
+  #mongos
+  ################
+  mongodb_mongos:
+    image: marcob/mongodb-automation:2.7.1
+    security_opt:
+      - seccomp:unconfined
+    labels:
+      - "role=mongos"
+    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsGroupId=$YOURMMSGROUPID --mmsApiKey=$YOURMMSGROUPAPIKEY
