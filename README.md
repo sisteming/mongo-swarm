@@ -15,6 +15,12 @@ This project requires the following binaries to be installed and configured in y
 
 Additionally, to deploy to AWS ec2 instances, your ec2 command line should be already configured with usual key and token.
 
+MongoDB World Demo 
+-----
+The compose files used during the MongoDB World demo are available in the demo directory:
+
+[https://github.com/sisteming/mongo-swarm/tree/master/demo](https://github.com/sisteming/mongo-swarm/tree/master/demo)
+
 Steps to deploy a Swarm cluster with docker-machine running on AWS ec2 instances 
 -----
 
@@ -44,8 +50,8 @@ Docker Machine creates a security group called docker-machine. Ensure docker-mac
 * And also TCP ports 7946 and 8500 (Consul).
 * And because it's nice for debugging, let's add ICMP (for ping) too.
 
-#Create an instance to host the discovery service (Consul)
-
+Create an instance to host the discovery service (Consul)
+-----
 	docker-machine create --driver amazonec2 --amazonec2-region eu-west-1 \
 	--amazonec2-tags owner,myusername,expire-on,2016-07-15 \
 	--amazonec2-instance-type m3.large \
@@ -55,8 +61,8 @@ Docker Machine creates a security group called docker-machine. Ensure docker-mac
 	eval $(docker-machine env marcob-MDBW-consul-machine)
 
 
-#Start the consul discovery service
-
+Start the consul discovery service
+-----
 Getting the right IP address to connect to Consul is key for Swarm multi-host networking to work. On AWS this is eth0 but it might change in other platforms.
 
 	export KV_IP=$(docker-machine ssh marcob-MDBW-consul-machine 'ifconfig eth0 | grep "inet addr:" | cut -d: -f2 | cut -d" " -f1')
