@@ -1,0 +1,548 @@
+{
+   "options": {
+        "downloadBase": "/var/lib/mongodb-mms-automation",
+        "downloadBaseWindows": "C:\\mongodb-mms-automation"
+    },
+    "mongoDbVersions": [
+        {"name": "3.0.12"},
+        {"name": "3.2.7"}
+    ],
+    "backupVersions": [
+        {
+            "hostname": "cfgsvr-a",
+            "logPath": "/var/log/mongodb-mms-automation/backup-agent.log",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            }
+        }
+    ],
+    "monitoringVersions": [
+        {
+            "hostname": "cfgsvr-a",
+            "logPath": "/var/log/mongodb-mms-automation/monitoring-agent.log",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            }
+        }
+    ],
+    "processes": [
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27027
+                },
+                "replication": {
+                    "replSetName": "dockerC1"
+                },
+                "storage": {
+                    "dbPath": "/data/dockerC_0",
+                    "wiredTiger": {
+                            "engineConfig": {
+                                "cacheSizeGB": 3
+                            }
+                        }
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/dockerC_0/mongodb.log"
+                }
+            },
+            "hostname": "rs1a",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "dockerC_0",
+            "processType": "mongod",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        },
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27028
+                },
+                "replication": {
+                    "replSetName": "dockerC1"
+                },
+                "storage": {
+                    "dbPath": "/data/dockerC_0",
+                    "wiredTiger": {
+                            "engineConfig": {
+                                "cacheSizeGB": 3
+                            }
+                        }
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/dockerC_0/mongodb.log"
+                }
+            },
+            "hostname": "rs1b",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "dockerC_1",
+            "processType": "mongod",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        },
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27029
+                },
+                "replication": {
+                    "replSetName": "dockerC1"
+                },
+                "storage": {
+                    "dbPath": "/data/dockerC_0",
+                    "wiredTiger": {
+                            "engineConfig": {
+                                "cacheSizeGB": 3
+                            }
+                        }
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/dockerC_0/mongodb.log"
+                }
+            },
+            "hostname": "rs1c",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "dockerC_2",
+            "processType": "mongod",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        },
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27037
+                },
+                "replication": {
+                    "replSetName": "dockerC2"
+                },
+                "storage": {
+                    "dbPath": "/data/dockerC_1",
+                    "wiredTiger": {
+                            "engineConfig": {
+                                "cacheSizeGB": 3
+                            }
+                        }
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/dockerC_1/mongodb.log"
+                }
+            },
+            "hostname": "rs2a",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "dockerC_3",
+            "processType": "mongod",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        },
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27038
+                },
+                "replication": {
+                    "replSetName": "dockerC2"
+                },
+                "storage": {
+                    "dbPath": "/data/dockerC_1",
+                    "wiredTiger": {
+                            "engineConfig": {
+                                "cacheSizeGB": 3
+                            }
+                        }
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/dockerC_1/mongodb.log"
+                }
+            },
+            "hostname": "rs2b",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "dockerC_4",
+            "processType": "mongod",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        },
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27039
+                },
+                "replication": {
+                    "replSetName": "dockerC2"
+                },
+                "storage": {
+                    "dbPath": "/data/dockerC_1",
+                    "wiredTiger": {
+                            "engineConfig": {
+                                "cacheSizeGB": 3
+                            }
+                        }
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/dockerC_1/mongodb.log"
+                }
+            },
+            "hostname": "rs2c",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "dockerC_5",
+            "processType": "mongod",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        },
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27047
+                },
+                "replication": {
+                    "replSetName": "dockerC3"
+                },
+                "storage": {
+                    "dbPath": "/data/dockerC_2",
+                    "wiredTiger": {
+                            "engineConfig": {
+                                "cacheSizeGB": 3
+                            }
+                        }
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/dockerC_2/mongodb.log"
+                }
+            },
+            "hostname": "rs3a",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "dockerC_6",
+            "processType": "mongod",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        },
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27048
+                },
+                "replication": {
+                    "replSetName": "dockerC3"
+                },
+                "storage": {
+                    "dbPath": "/data/dockerC_2",
+                    "wiredTiger": {
+                            "engineConfig": {
+                                "cacheSizeGB": 3
+                            }
+                        }
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/dockerC_2/mongodb.log"
+                }
+            },
+            "hostname": "rs3b",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "dockerC_7",
+            "processType": "mongod",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        },
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27049
+                },
+                "replication": {
+                    "replSetName": "dockerC3"
+                },
+                "storage": {
+                    "dbPath": "/data/dockerC_2",
+                    "wiredTiger": {
+                            "engineConfig": {
+                                "cacheSizeGB": 3
+                            }
+                        }
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/dockerC_2/mongodb.log"
+                }
+            },
+            "hostname": "rs3c",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "dockerC_8",
+            "processType": "mongod",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        },
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27057
+                },
+                "replication": {
+                    "replSetName": "dockerC_config_rs"
+                },
+                "sharding": {
+                    "clusterRole": "configsvr"
+                },
+                "storage": {
+                    "dbPath": "/data/dockerC_config_1"
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/dockerC_config_1/mongodb.log"
+                }
+            },
+            "hostname": "cfgsvr-a",
+            "alias": "cfgsvr-a",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "dockerC_config_1",
+            "processType": "mongod",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        },
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27058
+                },
+                "replication": {
+                    "replSetName": "dockerC_config_rs"
+                },
+                "sharding": {
+                    "clusterRole": "configsvr"
+                },
+                "storage": {
+                    "dbPath": "/data/dockerC_config_2"
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/dockerC_config_2/mongodb.log"
+                }
+            },
+            "hostname": "cfgsvr-b",
+            "alias": "cfgsvr-b",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "dockerC_config_2",
+            "processType": "mongod",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        },
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27059
+                },
+                "replication": {
+                    "replSetName": "dockerC_config_rs"
+                },
+                "sharding": {
+                    "clusterRole": "configsvr"
+                },
+                "storage": {
+                    "dbPath": "/data/dockerC_config_3"
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/dockerC_config_3/mongodb.log"
+                }
+            },
+            "hostname": "cfgsvr-c",
+            "alias": "cfgsvr-c",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "dockerC_config_3",
+            "processType": "mongod",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        },
+        {
+            "args2_6": {
+                "net": {
+                    "port": 27017
+                },
+                "systemLog": {
+                    "destination": "file",
+                    "path": "/data/docker_mongos/mongos.log"
+                }
+            },
+            "cluster": "dockerCCluster",
+            "hostname": "mongos",
+            "logRotate": {
+                "sizeThresholdMB": 1000,
+                "timeThresholdHrs": 24
+            },
+            "name": "docker-mongos",
+            "processType": "mongos",
+            "version": "3.2.7",
+            "authSchemaVersion": 3
+        }
+    ],
+    "replicaSets": [
+        {
+            "_id": "dockerC1",
+            "members": [
+                {
+                    "_id": 0,
+                    "host": "dockerC_0",
+                    "priority": 1,
+                    "votes": 1,
+                    "slaveDelay": 0,
+                    "hidden": false
+                },
+                {
+                    "_id": 1,
+                    "host": "dockerC_1",
+                    "priority": 1,
+                    "votes": 1,
+                    "slaveDelay": 0,
+                    "hidden": false
+                },
+                {
+                    "_id": 2,
+                    "host": "dockerC_2",
+                    "priority": 1,
+                    "votes": 1,
+                    "slaveDelay": 0,
+                    "hidden": false
+                }
+            ]
+        },
+        {
+            "_id": "dockerC2",
+            "members": [
+                {
+                    "_id": 0,
+                    "host": "dockerC_3",
+                    "priority": 1,
+                    "votes": 1,
+                    "slaveDelay": 0,
+                    "hidden": false
+                },
+                {
+                    "_id": 1,
+                    "host": "dockerC_4",
+                    "priority": 1,
+                    "votes": 1,
+                    "slaveDelay": 0,
+                    "hidden": false
+                },
+                {
+                    "_id": 2,
+                    "host": "dockerC_5",
+                    "priority": 1,
+                    "votes": 1,
+                    "slaveDelay": 0,
+                    "hidden": false
+                }
+            ]
+        },
+        {
+            "_id": "dockerC3",
+            "members": [
+                 {
+                    "_id": 0,
+                    "host": "dockerC_6",
+                    "priority": 1,
+                    "votes": 1,
+                    "slaveDelay": 0,
+                    "hidden": false
+                },
+                {
+                    "_id": 1,
+                    "host": "dockerC_7",
+                    "priority": 1,
+                    "votes": 1,
+                    "slaveDelay": 0,
+                    "hidden": false
+                },
+                {
+                    "_id": 2,
+                    "host": "dockerC_8",
+                    "priority": 1,
+                    "votes": 1,
+                    "slaveDelay": 0,
+                    "hidden": false
+                }
+            ]
+        },
+        {
+              "_id": "dockerC_config_rs",
+              "members": [
+                  {
+                      "_id": 0,
+                      "host": "dockerC_config_1"
+                  },
+                  {
+                      "_id": 1,
+                      "host": "dockerC_config_2"
+                  },
+                  {
+                      "_id": 2,
+                      "host": "dockerC_config_3"
+                  }
+              ]
+          }
+    ],
+    "sharding": [
+        {
+            "configServerReplica": "dockerC_config_rs",
+            "name": "dockerCCluster",
+            "shards": [
+                {
+                    "_id": "dockerC1",
+                    "rs": "dockerC1"
+                },
+                {
+                    "_id": "dockerC2",
+                    "rs": "dockerC2"
+                },
+                {
+                    "_id": "dockerC3",
+                    "rs": "dockerC3"
+                }
+            ]
+        }
+    ]
+}
