@@ -2,57 +2,61 @@ version: '2'
 
 services:
 
+  ################
+  #FIRST SHARD
+  ################
+
   mongodb_replset_1:
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     security_opt:
       - seccomp:unconfined
     labels:
       - "role=mongod"
       - "replset=rs1"
-    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsGroupId=$YOURMMSGROUPID --mmsApiKey=$YOURMMSGROUPAPIKEY
+    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsBaseUrl=$YOUR_MMS_GROUP_ID --mmsApiKey=$YOUR_MMS_API_KEY
 
   ################
   #SECOND SHARD
   ################
   mongodb_replset_2:
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     security_opt:
       - seccomp:unconfined
     labels:
       - "role=mongod"
       - "replset=rs2"
-    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsGroupId=$YOURMMSGROUPID --mmsApiKey=$YOURMMSGROUPAPIKEY
+    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsBaseUrl=$YOUR_MMS_GROUP_ID --mmsApiKey=$YOUR_MMS_API_KEY
 
   ################
   #THIRD SHARD
   ################
   mongodb_replset_3:
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     security_opt:
       - seccomp:unconfined
     labels:
       - "role=mongod"
       - "replset=rs3"
-    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsGroupId=$YOURMMSGROUPID --mmsApiKey=$YOURMMSGROUPAPIKEY
+    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsBaseUrl=$YOUR_MMS_GROUP_ID --mmsApiKey=$YOUR_MMS_API_KEY
 
   ################
   #CFG SVR
   ################
   mongodb_cfg:
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     security_opt:
       - seccomp:unconfined
     labels:
       - "role=cfgsvr"
-    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsGroupId=$YOURMMSGROUPID --mmsApiKey=$YOURMMSGROUPAPIKEY
+    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsBaseUrl=$YOUR_MMS_GROUP_ID --mmsApiKey=$YOUR_MMS_API_KEY
 
   ################
   #mongos
   ################
   mongodb_mongos:
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     security_opt:
       - seccomp:unconfined
     labels:
       - "role=mongos"
-    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsGroupId=$YOURMMSGROUPID --mmsApiKey=$YOURMMSGROUPAPIKEY
+    command: --mmsBaseUrl=https://cloud.mongodb.com --mmsBaseUrl=$YOUR_MMS_GROUP_ID --mmsApiKey=$YOUR_MMS_API_KEY

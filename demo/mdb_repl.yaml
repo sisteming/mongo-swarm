@@ -14,7 +14,7 @@ services:
       - 27001:27000
       - 27027:27027
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/rs1:/data
     hostname: rs1a
     container_name: rs1a
     labels:
@@ -29,7 +29,7 @@ services:
       - 27002:27000
       - 27028:27028
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/rs1:/data
     hostname: rs1b
     container_name: rs1b
     labels:
@@ -44,7 +44,7 @@ services:
       - 27003:27000
       - 27029:27029
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/rs1:/data
     hostname: rs1c
     container_name: rs1c
     labels:
@@ -62,7 +62,7 @@ services:
       - 27011:27000
       - 27037:27037
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/rs2:/data
     hostname: rs2a
     container_name: rs2a
     labels:
@@ -76,7 +76,7 @@ services:
       - 27012:27000
       - 27038:27038
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/rs2:/data
     hostname: rs2b
     container_name: rs2b
     labels:
@@ -90,7 +90,7 @@ services:
       - 27013:27000
       - 27039:27039
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/rs2:/data
     hostname: rs2c
     container_name: rs2c
     labels:
@@ -109,7 +109,7 @@ services:
       - 27021:27000
       - 27047:27047
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/rs3:/data
     hostname: rs3a
     container_name: rs3a
     labels:
@@ -123,7 +123,7 @@ services:
       - 27022:27000
       - 27048:27048
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/rs3:/data
     hostname: rs3b
     container_name: rs3b
     labels:
@@ -137,7 +137,7 @@ services:
       - 27023:27000
       - 27049:27049
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/rs3:/data
     hostname: rs3c
     container_name: rs3c
     labels:
@@ -155,7 +155,7 @@ services:
       - 27030:27000
       - 27057:27057
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/cfg:/data
     hostname: cfgsvr-a
     container_name: cfgsvr-a
 
@@ -167,7 +167,7 @@ services:
       - 27031:27000
       - 27058:27058
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/cfg:/data
     hostname: cfgsvr-b
     container_name: cfgsvr-b
 
@@ -179,7 +179,7 @@ services:
       - 27032:27000
       - 27059:27059
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/cfg:/data
     hostname: cfgsvr-c
     container_name: cfgsvr-c
 
@@ -195,6 +195,6 @@ services:
       - 27000:27000
       - 27017:27017
     volumes:
-      - /mnt/data:/data
+      - /mnt/data/mongos:/data
     hostname: mongos
     container_name: mongos

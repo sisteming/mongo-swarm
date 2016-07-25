@@ -9,7 +9,7 @@ services:
     extends:
       file: mdb_cgroup.yaml
       service: rs1a
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:replset!=rs1"
       - "affinity:initialstate!=~primary"
@@ -19,7 +19,7 @@ services:
     extends:
       file: mdb_cgroup.yaml
       service: rs1b
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:replset!=rs1"
       - "constraint:node!=marcob-MDBW-swarm-master"
@@ -29,7 +29,7 @@ services:
     extends:
       file: mdb_cgroup.yaml
       service: rs1c
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:replset!=rs1"
       - "constraint:node!=marcob-MDBW-swarm-master"
@@ -42,7 +42,7 @@ services:
     extends:
       file: mdb_cgroup.yaml
       service: rs2a
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:replset!=rs2"
       - "affinity:initialstate!=~primary"
@@ -52,7 +52,7 @@ services:
     extends:
       file: mdb_cgroup.yaml
       service: rs2b
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:replset!=rs2"
       - "constraint:node!=marcob-MDBW-swarm-master"
@@ -61,7 +61,7 @@ services:
     extends:
       file: mdb_cgroup.yaml
       service: rs2c
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:replset!=rs2"
       - "constraint:node!=marcob-MDBW-swarm-master"
@@ -74,7 +74,7 @@ services:
     extends:
       file: mdb_cgroup.yaml
       service: rs3a
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:replset!=rs3"
       - "affinity:initialstate!=~primary"
@@ -84,7 +84,7 @@ services:
     extends:
       file: mdb_cgroup.yaml
       service: rs3b
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:replset!=rs3"
       - "constraint:node!=marcob-MDBW-swarm-master"
@@ -93,7 +93,7 @@ services:
     extends:
       file: mdb_cgroup.yaml
       service: rs3c
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:replset!=rs3"
       - "constraint:node!=marcob-MDBW-swarm-master"
@@ -105,7 +105,7 @@ services:
     extends:
       file: mdb_repl.yaml
       service: cfgsvr-a
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:role!=cfgsvr"
       - "constraint:node!=marcob-MDBW-swarm-master"
@@ -114,7 +114,7 @@ services:
     extends:
       file: mdb_repl.yaml
       service: cfgsvr-b
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:role!=cfgsvr"
       - "constraint:node!=marcob-MDBW-swarm-master"
@@ -123,7 +123,7 @@ services:
     extends:
       file: mdb_repl.yaml
       service: cfgsvr-c
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:role!=cfgsvr"
       - "constraint:node!=marcob-MDBW-swarm-master"
@@ -135,7 +135,7 @@ services:
     extends:
       file: mdb_repl.yaml
       service: mongos
-    image: marcob/mongodb-automation:2.7.1
+    image: marcob/mongodb-automation:latest
     environment:
       - "affinity:role!=mongos"
       - "constraint:node==marcob-MDBW-swarm-master"
